@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - [Your Website Name]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #111;
+            color: #fff;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .youtube-button {
+            display: inline-block;
+            background-color: #FF0000;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .youtube-button:hover {
+            background-color: #cc0000;
+        }
+        #countdown {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome To Weird Trucks! </h1>
+    <p>Our website is under construction.</p>
+    
+    <!-- Optional Countdown Timer -->
+    <div id="countdown"></div>
+
+    <p>Check out our YouTube Channel!:</p>
+    <a class="youtube-button" href="https://www.youtube.com/channel/UCR7WZNRK01i8SR1-laH4hAg" target="_blank">Visit on YouTube</a>
+
+    <script>
+        // Optional Countdown Timer
+        const launchDate = new Date("2025-06-01T00:00:00").getTime();
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const timeLeft = launchDate - now;
+
+            if (timeLeft < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "We're Live!";
+                return;
+            }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `Pointless Timer: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }, 1000);
+    </script>
+</body>
+</html>
